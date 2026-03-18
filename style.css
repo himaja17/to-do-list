@@ -4,14 +4,35 @@ body {
   background: #f2f2f2;
 }
 
-input, select {
+input {
   padding: 10px;
-  margin: 5px;
+  width: 200px;
 }
 
 button {
   padding: 10px;
+  margin-left: 5px;
   background: blue;
   color: white;
   border: none;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: white;
+  margin: 10px auto;
+  padding: 10px;
+  width: 250px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* completed task */
+.done {
+  text-decoration: line-through;
+  color: gray;
 }
