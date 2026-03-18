@@ -1,23 +1,33 @@
-function recommendCar() {
-  let budget = document.getElementById("budget").value;
-  let brand = document.getElementById("brand").value;
-  let result = "";
+function addTask() {
+  let input = document.getElementById("taskInput");
+  let task = input.value;
 
-  if (budget === "") {
-    result = "Enter budget!";
-  } 
-  else if (budget <= 5) {
-    result = "Maruti Alto / S-Presso";
-  } 
-  else if (budget <= 10) {
-    result = "Swift / Tata Nexon / Hyundai i20";
-  } 
-  else if (budget <= 20) {
-    result = "Hyundai Creta / Kia Seltos";
-  } 
-  else {
-    result = "Fortuner / XUV700";
+  if (task === "") {
+    alert("Enter a task!");
+    return;
   }
 
-  document.getElementById("result").innerText = result;
+  let li = document.createElement("li");
+  li.innerText = task;
+
+  // mark as done
+  li.onclick = function() {
+    li.classList.toggle("done");
+  };
+
+  // delete button
+  let delBtn = document.createElement("button");
+  delBtn.innerText = "❌";
+  delBtn.style.marginLeft = "10px";
+
+  delBtn.onclick = function(event) {
+    event.stopPropagation();
+    li.remove();
+  };
+
+  li.appendChild(delBtn);
+
+  document.getElementById("taskList").appendChild(li);
+
+  input.value = "";
 }
