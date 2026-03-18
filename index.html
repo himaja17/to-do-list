@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Car App</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#000000">
+
+</head>
+<body>
+
+  <h1>🚗 Car Recommendation</h1>
+
+  <input type="number" id="budget" placeholder="Enter budget (lakhs)">
+  
+  <select id="brand">
+    <option value="any">Any</option>
+    <option value="maruti">Maruti</option>
+    <option value="hyundai">Hyundai</option>
+    <option value="tata">Tata</option>
+  </select>
+
+  <br><br>
+  <button onclick="recommendCar()">Find Car</button>
+
+  <h2 id="result"></h2>
+
+  <script src="script.js"></script>
+
+  <!-- Service Worker -->
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("sw.js");
+    }
+  </script>
+
+</body>
+</html>
